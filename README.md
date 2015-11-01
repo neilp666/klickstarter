@@ -2,3 +2,5 @@
 
 kickstarter example only
 
+- annotate gem
+
