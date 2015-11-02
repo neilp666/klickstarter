@@ -1,6 +1,6 @@
 <div class="col-md-4 col-sm-6 col-xs-12">
 <div class="project-box">
-  <%= link_to image_tag(project.image_url, alt: project.name, width: '100%', height: '200px'), project_path(project) %>
+  <%= link_to image_tag(project.image_url, alt: project.name, width: '100%', height: '200px'), "#" %>
 <div class="description-box">
   <div class="title">
   <%= link_to project.name, "#" %>
@@ -10,7 +10,7 @@
   </div>
   <div class="project-bar">
     <div class="progress">
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= funded %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= funded %>">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="#" aria-valuemin="0" aria-valuemax="100" style="width: ">
         <span class="sr-only">100% Complete (Success)</span>
       </div>
     </div>
