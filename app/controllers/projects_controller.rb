@@ -17,12 +17,15 @@ class ProjectsController < ApplicationController
   def edit
   end
 
+  def update
+  end
+
   def create
     @project = current_user.projects.build(project_params)
 
     respond_to do |format|
     if @project.save
-      format.html { redirect_to @project, notice: "Project was successfully created!" }
+      format.html { redirect_to @project, notice: "Project was successfully updated!" }
       format.json { render :show, status: :ok, location: @project }
     else
       format.html { redirect_to :edit }
@@ -31,6 +34,26 @@ class ProjectsController < ApplicationController
   end
 end
 
+
+def destroy
+  @project.destroy
+  respond_to do |format|
+      format.html { redirect_to project_path, notice: "Project was successfully Destroyed!"}
+      format.json { head :no_content }
+  end
+end
+
+  def update
+    respond_to do |format|
+    if @project.update(project_params)
+      format.html { redirect_to @project, notice: "Project was successfully updated!" }
+      format.json { render :show, status: :ok, location: @project }
+    else
+      format.html { redirect_to :edit }
+      format.json { render json: @project.errors, status: :unprocessable_entitiy }
+    end
+  end
+end
   private 
 
   def set_project
