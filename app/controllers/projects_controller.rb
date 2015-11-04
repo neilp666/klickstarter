@@ -18,7 +18,17 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+    if @project.update(project_params)
+      format.html { redirect_to @project, notice: "Project was successfully updated!" }
+      format.json { render :show, status: :ok, location: @project }
+    else
+      format.html { render :edit }
+      format.json { render json: @project.errors, status: :unprocessable_entitiy }
+    end
   end
+end
+
 
   def create
     @project = current_user.projects.build(project_params)
@@ -28,7 +38,7 @@ class ProjectsController < ApplicationController
       format.html { redirect_to @project, notice: "Project was successfully updated!" }
       format.json { render :show, status: :ok, location: @project }
     else
-      format.html { redirect_to :edit }
+      format.html { render :edit }
       format.json { render json: @project.errors, status: :unprocessable_entitiy }
     end
   end
@@ -49,7 +59,7 @@ end
       format.html { redirect_to @project, notice: "Project was successfully updated!" }
       format.json { render :show, status: :ok, location: @project }
     else
-      format.html { redirect_to :edit }
+      format.html { render :edit }
       format.json { render json: @project.errors, status: :unprocessable_entitiy }
     end
   end
