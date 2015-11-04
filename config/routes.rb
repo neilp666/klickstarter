@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :projects
+  resources :projects do
+    resources :rewards, only: [:new, :create, :edit, :update, :destroy]
+  end
 
   root 'projects#index'
   # The priority is based upon order of creation: first created -> highest priority.
