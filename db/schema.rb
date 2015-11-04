@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030193823) do
+ActiveRecord::Schema.define(version: 20151103161838) do
 
   create_table "projects", force: true do |t|
     t.integer  "user_id"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 20151030193823) do
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+
+  create_table "rewards", force: true do |t|
+    t.integer  "project_id"
+    t.text     "description"
+    t.integer  "value"
+    t.decimal  "shipping",           precision: 0, scale: 2
+    t.integer  "number_available"
+    t.date     "estimated_delivery"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rewards", ["project_id"], name: "index_rewards_on_project_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

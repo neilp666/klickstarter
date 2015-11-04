@@ -6,3 +6,5 @@ kickstarter example only
 
 - bootstrap-wysihtml5-rails WYSIWYG editor for Bootstrap, integrated in Rails assets pipeline
 
+- date validator gem
+

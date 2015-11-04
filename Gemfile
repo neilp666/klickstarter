@@ -18,7 +18,7 @@ gem 'devise'
 gem 'annotate'
 gem 'simple_form'
 gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
-
+gem 'date_validator'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
