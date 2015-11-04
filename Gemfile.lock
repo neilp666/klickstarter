@@ -1,9 +1,25 @@
 GIT
+  remote: git://github.com/derekprior/momentjs-rails.git
+  revision: 3d35d16b03dc2a19658f3e26a37bb3d09fb38d9a
+  specs:
+    momentjs-rails (2.10.6)
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/nerian/bootstrap-wysihtml5-rails.git
   revision: a4b413aa1c9d5f614a33c3c1f5731ed8bc6302de
   specs:
     bootstrap-wysihtml5-rails (0.3.3.7)
       railties (>= 3.0)
+
+GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: 36d21cec5da7f5b214925804f60e63c61c747023
+  branch: master
+  submodules: true
+  specs:
+    datetimepicker-rails (4.7.16)
+      momentjs-rails (>= 2.9.0)
 
 GEM
   remote: https://rubygems.org/
@@ -149,10 +165,12 @@ DEPENDENCIES
   bootstrap-wysihtml5-rails!
   coffee-rails (~> 4.0.0)
   date_validator
+  datetimepicker-rails!
   devise
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails (~> 2.9)!
   rails (= 4.1.7)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

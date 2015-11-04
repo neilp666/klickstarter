@@ -8,3 +8,5 @@ kickstarter example only
 
 - date validator gem
 
+- date time picker gem
+
