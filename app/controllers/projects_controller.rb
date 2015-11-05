@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @rewards = @project.rewards
   end
 
   def new
